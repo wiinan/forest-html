@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type='text/css' href='style.css'>
+    <title>Parallax</title>
+</head>
+<body>
+    <header id='header'>
+        <a href="#" class="logo">Jungle</a>
+        <ul>
+            <li><a href="#" class="active">Inicio</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Destinos</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </header>
+    <section>
+        <h2 id="text"><span>Entre para nova</span><br>Aventura</h2>
+        <img src="bird1.png" id="bird1">
+        <img src="bird2.png" id="bird2">
+        <img src="forest.png" id="forest">
+        <a href="#" id="btn">Explore</a>
+        <img src="rocks.png" id="rocks">
+        <img src="water.png" id="water">
+    </section>
+    <div class="sec">
+        <h2>Parallax Scrolling Effect</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet odio vulputate, dignissim dui nec, congue urna. Etiam vel porttitor diam. Nunc vitae diam hendrerit, sollicitudin magna quis, laoreet ligula. Morbi eget sapien sit amet arcu pretium dignissim eu at neque. Pellentesque non facilisis est. Nulla metus eros, semper at quam in, iaculis posuere magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse viverra lacus tortor, suscipit eleifend quam sollicitudin non. Sed tincidunt tempor augue eu fringilla. Sed at orci quis nulla fringilla dignissim. Phasellus nibh felis, mollis a faucibus in, lobortis et mi. Suspendisse potenti. In consequat, nulla eget ultrices fermentum, tellus est malesuada urna, nec tempus tellus tortor a diam.<br><br>
+
+            Nunc suscipit, ante vitae ornare blandit, felis dolor consequat urna, gravida luctus turpis tortor non tortor. Nam bibendum fermentum orci. Fusce lobortis arcu diam, ut volutpat purus posuere in. Nulla volutpat convallis augue, feugiat pulvinar metus dapibus a. Vivamus eget arcu nec tortor accumsan commodo nec sit amet erat. Quisque ornare lobortis euismod. Aenean vitae posuere leo, vitae maximus elit. Duis sed eleifend lorem. Nunc massa velit, consectetur et dolor vitae, sodales vehicula purus. Quisque et ultricies diam. In hac habitasse platea dictumst. Maecenas nec tempus velit. Nunc sit amet leo quam. Sed sed diam accumsan, luctus tellus nec, molestie mauris.<br><br>
+            
+            Cras placerat mattis ligula, vel efficitur lorem imperdiet in. Sed ultricies hendrerit orci, eu euismod nibh tristique et. Nunc nulla nisi, consequat ut ultrices ut, feugiat id ex. Maecenas vel ultrices ante. Ut tempus feugiat gravida. Pellentesque pellentesque euismod lacus, in ullamcorper nisl aliquam et. Vestibulum eleifend, sapien eu tristique bibendum, metus nibh pulvinar tortor, convallis sagittis neque lacus egestas sem. Vestibulum quis est mattis, blandit felis fringilla, cursus ipsum. Suspendisse nisi dolor, efficitur vitae orci ut, dignissim sollicitudin ipsum. Phasellus sem diam, finibus ut enim vel, tristique pretium eros. Integer a odio vel ligula porttitor ullamcorper.<br><br>
+            
+            Sed rutrum consectetur dui faucibus venenatis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales mi ut consequat tincidunt. Nam ac augue ut mauris sodales commodo ac et ligula. Suspendisse eget aliquet lectus. Sed blandit a orci in auctor. Integer pretium risus a nibh vulputate tempor. Curabitur eget odio velit.<br><br></p>
+    </div>
+    <script>
+        let text = document.getElementById('text');
+        let bird1 = document.getElementById('bird1');
+        let bird2 = document.getElementById('bird2');
+        let forest = document.getElementById('forest');
+        let rocks = document.getElementById('rocks');
+        let btn = document.getElementById('btn');
+        let water = document.getElementById('water');
+        let header = document.getElementById('header');
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY;
+            text.style.top = 50 + value * -0.5 + '%';
+            bird1.style.top = value * -1.5 + 'px';
+            bird1.style.left = value * 2 + 'px';
+            bird2.style.top = value * -1.5 + 'px';
+            bird2.style.left = value * -5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            rocks.style.top = value * -0.12 + 'px';
+            forest.style.top = value * 0.25 + 'px';
+            header.style.top = value * -0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
